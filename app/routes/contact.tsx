@@ -2,11 +2,11 @@ import PageLayout from "../components/PageLayout";
 
 export function meta() {
     return [
-        { title: "Contact Us — White Rabbit" },
+        { title: "Contact Us — White Rabbit Tech" },
         {
             name: "description",
             content:
-                "Get in touch with the White Rabbit team. We'd love to hear from you.",
+                "Get in touch with the White Rabbit Tech team. We'd love to hear from you.",
         },
     ];
 }

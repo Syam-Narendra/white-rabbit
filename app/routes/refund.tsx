@@ -2,11 +2,11 @@ import PageLayout from "../components/PageLayout";
 
 export function meta() {
     return [
-        { title: "Refund & Cancellation Policy — White Rabbit" },
+        { title: "Refund & Cancellation Policy — White Rabbit Tech" },
         {
             name: "description",
             content:
-                "Understand the White Rabbit refund and cancellation policy for all our products.",
+                "Understand the White Rabbit Tech refund and cancellation policy for all our products.",
         },
     ];
 }
@@ -20,7 +20,7 @@ export default function Refund() {
             <h2 className="page-section-title">Overview</h2>
             <p className="page-text">
                 This Refund and Cancellation Policy applies to all subscriptions and
-                purchases made through White Rabbit products, including Gym Rabbit,
+                purchases made through White Rabbit Tech products, including Gym Rabbit,
                 School Bit, and Rabbit Case. We want you to be satisfied with our
                 services, and we aim to handle refund requests fairly and transparently.
             </p>

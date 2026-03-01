@@ -45,7 +45,7 @@ export default function PageLayout({
                 <div className="navbar-left">
                     <Link to="/" className="navbar-logo">
                         <span className="navbar-logo-icon">🐇</span>
-                        WHITE RABBIT
+                        White Rabbit Tech
                     </Link>
                     <div className="nav-links">
                         <Link className="nav-link" to="/#products">
@@ -70,7 +70,7 @@ export default function PageLayout({
                 <div className="footer-grid">
                     <div>
                         <div className="footer-brand-name">
-                            <span>🐇</span> White Rabbit
+                            <span>🐇</span> White Rabbit Tech
                         </div>
                         <p className="footer-brand-desc">
                             A product-based software company building tools that help
@@ -139,7 +139,7 @@ export default function PageLayout({
 
                 <div className="footer-bottom">
                     <span className="footer-copyright">
-                        © {new Date().getFullYear()} White Rabbit. All rights reserved.
+                        © {new Date().getFullYear()} White Rabbit Tech. All rights reserved.
                     </span>
                     <div className="footer-bottom-links">
                         <Link className="footer-bottom-link" to="/privacy">

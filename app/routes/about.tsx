@@ -2,11 +2,11 @@ import PageLayout from "../components/PageLayout";
 
 export function meta() {
     return [
-        { title: "About Us — White Rabbit" },
+        { title: "About Us — White Rabbit Tech" },
         {
             name: "description",
             content:
-                "Learn about White Rabbit, a product-based software company building Gym Rabbit, School Bit, and Rabbit Case.",
+                "Learn about White Rabbit Tech, a product-based software company building Gym Rabbit, School Bit, and Rabbit Case.",
         },
     ];
 }
@@ -14,12 +14,12 @@ export function meta() {
 export default function About() {
     return (
         <PageLayout>
-            <h1 className="page-title">About White Rabbit</h1>
+            <h1 className="page-title">About White Rabbit Tech</h1>
             <p className="page-updated">Who we are and what we build</p>
 
             <h2 className="page-section-title">Our Mission</h2>
             <p className="page-text">
-                White Rabbit is a product-based software company on a mission to build
+                White Rabbit Tech is a product-based software company on a mission to build
                 powerful, purpose-built management tools that help real businesses run
                 smarter. We believe great software should be simple, reliable, and
                 designed for the people who use it every day.

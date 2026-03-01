@@ -3,11 +3,11 @@ import type { Route } from "./+types/home";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "White Rabbit — Building Software That Powers Businesses" },
+    { title: "White Rabbit Tech — Building Software That Powers Businesses" },
     {
       name: "description",
       content:
-        "White Rabbit is a product-based software company building Gym Rabbit, School Bit, and Rabbit Case — powerful management tools for businesses.",
+        "White Rabbit Tech is a product-based software company building Gym Rabbit, School Bit, and Rabbit Case — powerful management tools for businesses.",
     },
     { name: "theme-color", content: "#000000" },
   ];
@@ -92,7 +92,7 @@ export default function Home() {
             <div className="navbar-left">
               <Link to="/" className="navbar-logo">
                 <span className="navbar-logo-icon">🐇</span>
-                WHITE RABBIT
+                White Rabbit Tech
               </Link>
               <div className="nav-links">
                 <a className="nav-link" href="#products">
@@ -128,7 +128,7 @@ export default function Home() {
             </h1>
 
             <p className="hero-subtitle">
-              White Rabbit crafts powerful, purpose-built management tools for
+              White Rabbit Tech crafts powerful, purpose-built management tools for
               gyms, schools, and legal professionals — helping businesses run
               smarter, faster, and with confidence.
             </p>
@@ -174,7 +174,7 @@ export default function Home() {
         <div className="footer-grid">
           <div>
             <div className="footer-brand-name">
-              <span>🐇</span> White Rabbit
+              <span>🐇</span> White Rabbit Tech
             </div>
             <p className="footer-brand-desc">
               A product-based software company building tools that help
@@ -243,7 +243,7 @@ export default function Home() {
 
         <div className="footer-bottom">
           <span className="footer-copyright">
-            © {new Date().getFullYear()} White Rabbit. All rights reserved.
+            © {new Date().getFullYear()} White Rabbit Tech. All rights reserved.
           </span>
           <div className="footer-bottom-links">
             <Link className="footer-bottom-link" to="/privacy">

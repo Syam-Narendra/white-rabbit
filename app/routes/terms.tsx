@@ -2,11 +2,11 @@ import PageLayout from "../components/PageLayout";
 
 export function meta() {
     return [
-        { title: "Terms and Conditions — White Rabbit" },
+        { title: "Terms and Conditions — White Rabbit Tech" },
         {
             name: "description",
             content:
-                "Read the terms and conditions for using White Rabbit products and services.",
+                "Read the terms and conditions for using White Rabbit Tech products and services.",
         },
     ];
 }
@@ -19,7 +19,7 @@ export default function Terms() {
 
             <h2 className="page-section-title">Agreement to Terms</h2>
             <p className="page-text">
-                By accessing or using any product or service provided by White Rabbit
+                By accessing or using any product or service provided by White Rabbit Tech
                 ("Company"), including Gym Rabbit, School Bit, and Rabbit Case, you
                 agree to be bound by these Terms and Conditions. If you disagree with
                 any part of these terms, you may not access our services.
@@ -69,14 +69,14 @@ export default function Terms() {
             <h2 className="page-section-title">Intellectual Property</h2>
             <p className="page-text">
                 All content, features, functionality, and design of our products are
-                owned by White Rabbit and are protected by copyright, trademark, and
+                owned by White Rabbit Tech and are protected by copyright, trademark, and
                 other intellectual property laws. You retain ownership of the data you
                 input into our platforms.
             </p>
 
             <h2 className="page-section-title">Limitation of Liability</h2>
             <p className="page-text">
-                To the maximum extent permitted by law, White Rabbit shall not be liable
+                To the maximum extent permitted by law, White Rabbit Tech shall not be liable
                 for any indirect, incidental, special, consequential, or punitive
                 damages arising out of or relating to your use of our products. Our
                 total liability shall not exceed the amount paid by you in the 12 months

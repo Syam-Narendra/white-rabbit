@@ -2,11 +2,11 @@ import PageLayout from "../components/PageLayout";
 
 export function meta() {
     return [
-        { title: "Privacy Policy — White Rabbit" },
+        { title: "Privacy Policy — White Rabbit Tech" },
         {
             name: "description",
             content:
-                "Read the White Rabbit privacy policy to understand how we collect, use, and protect your data.",
+                "Read the White Rabbit Tech privacy policy to understand how we collect, use, and protect your data.",
         },
     ];
 }
@@ -19,7 +19,7 @@ export default function Privacy() {
 
             <h2 className="page-section-title">Introduction</h2>
             <p className="page-text">
-                White Rabbit ("Company", "we", "us", or "our") is committed to
+                White Rabbit Tech ("Company", "we", "us", or "our") is committed to
                 protecting your personal information and your right to privacy. This
                 Privacy Policy explains what information we collect, how we use it, and
                 what rights you have in relation to it.
