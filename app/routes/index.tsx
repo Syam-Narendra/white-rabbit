@@ -1,4 +1,4 @@
-import Homepage from "~/welcome/welcome";
+import Homepage from "~/home/hero";
 
 export function meta() {
   return [
