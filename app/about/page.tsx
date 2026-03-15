@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { BRAND, NAV_DROPDOWNS, ABOUT_PAGE } from "../welcome/data";
-import Footer from "../welcome/footer";
+import { BRAND, ABOUT_PAGE } from "~/data";
+import Footer from "~/home/footer";
 
 function LogoIcon({ size = 28, fill = "#0a0a0c" }: { size?: number; fill?: string }) {
   return (

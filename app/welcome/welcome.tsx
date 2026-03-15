@@ -1,19 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import { TEAM, BRAND, NAV_DROPDOWNS, HERO, AI_ASSISTANTS, ABOUT_US, PLATFORM_PILLARS, WHY_CHOOSE_US, INDUSTRIES, CTA_SECTION } from "~/data";
 
-import {
-  BRAND,
-  NAV_DROPDOWNS,
-  HERO,
-  ABOUT_US,
-  PLATFORM_PILLARS,
-  WHY_CHOOSE_US,
-  INDUSTRIES,
-  CTA_SECTION,
-  TEAM,
-  AI_ASSISTANTS,
-  APPS,
-} from "./data";
-import Footer from "./footer";
+
+import Footer from "~/home/footer";
 
 interface Employee {
   role: string;
@@ -1483,29 +1472,31 @@ export default function Homepage() {
               </p>
             </div>
 
-            {/* Core Apps Bento Showcase */}
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+                display: "flex",
                 gap: 16,
-                marginBottom: 64,
+                overflowX: "auto",
+                scrollbarWidth: "none", // Firefox
+                msOverflowStyle: "none", // IE and Edge
+                paddingBottom: 24, // Give some breathing room for potential scrollbar interaction if visible
               }}
             >
-              {APPS.map((app, index) => (
+              {PLATFORM_PILLARS.map((pillar, i) => (
                 <div
-                  key={app.slug}
+                  key={i}
                   className="animate-bento-card"
                   style={{
                     borderRadius: 28,
                     overflow: "hidden",
                     position: "relative",
-                    background: app.gradient,
+                    background: pillar.gradient,
                     padding: isMobile ? "36px 28px" : "44px 40px",
                     minHeight: isMobile ? 320 : 380,
+                    minWidth: isMobile ? "85vw" : "350px", // Give cards fixed width for horizontal scrolling
+                    flexShrink: 0,
                     display: "flex",
                     flexDirection: "column",
-                    gridColumn: index === 0 && !isMobile ? "span 3" : "span 1",
                   }}
                 >
                   <div
@@ -1530,47 +1521,32 @@ export default function Homepage() {
                         color: "#fff",
                       }}
                     >
-                      <span style={{ fontSize: 14 }}>{app.icon}</span>
-                      {app.name}
+                      <span style={{ fontSize: 14 }}>{pillar.icon}</span>
+                      {"Platform Pillar"}
                     </div>
-                    {app.status === "coming-soon" && (
-                      <span
-                        style={{
-                          fontSize: 10,
-                          background: "rgba(255,255,255,0.2)",
-                          color: "#fff",
-                          border: "1px solid rgba(255,255,255,0.3)",
-                          borderRadius: 100,
-                          padding: "4px 10px",
-                          fontWeight: 700,
-                          letterSpacing: "0.05em",
-                        }}
-                      >
-                        COMING SOON
-                      </span>
-                    )}
+                  </div>
+
+                  <div style={{ fontSize: 40, marginBottom: 20, position: "relative", zIndex: 1 }}>
+                    {pillar.icon}
                   </div>
 
                   <div
                     style={{
                       position: "relative",
                       zIndex: 1,
-                      maxWidth: index === 0 && !isMobile ? "45%" : "100%",
+                      maxWidth: "100%",
                     }}
                   >
                     <h2
                       style={{
                         fontWeight: 700,
-                        fontSize:
-                          index === 0 && !isMobile
-                            ? "clamp(24px,2.5vw,36px)"
-                            : "clamp(20px,2vw,28px)",
+                        fontSize: "clamp(20px,2vw,28px)",
                         color: "#fff",
                         lineHeight: 1.25,
                         marginBottom: 16,
                       }}
                     >
-                      {app.tagline}
+                      {pillar.title}
                     </h2>
                     <p
                       style={{
@@ -1579,104 +1555,9 @@ export default function Homepage() {
                         lineHeight: 1.65,
                       }}
                     >
-                      {app.description}
+                      {pillar.desc}
                     </p>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 10,
-                        marginTop: 24,
-                      }}
-                    >
-                      {app.features.slice(0, 3).map((f, i) => (
-                        <div
-                          key={i}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 10,
-                            fontSize: 14,
-                            color: "#fff",
-                            fontWeight: 500,
-                          }}
-                        >
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                          >
-                            <path
-                              d="M16.6666 5L7.49992 14.1667L3.33325 10"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {f}
-                        </div>
-                      ))}
-                    </div>
                   </div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      right: index === 0 ? "5%" : -60,
-                      bottom: index === 0 ? "10%" : -60,
-                      width: index === 0 ? 300 : 250,
-                      height: index === 0 ? 300 : 250,
-                      borderRadius: "50%",
-                      background: "rgba(255,255,255,0.12)",
-                      filter: "blur(60px)",
-                      pointerEvents: "none",
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Platform Pillars */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-                gap: 24,
-              }}
-            >
-              {PLATFORM_PILLARS.map((pillar, i) => (
-                <div
-                  key={i}
-                  className="animate-bento-card"
-                  style={{
-                    background: pillar.gradient,
-                    borderRadius: 24,
-                    padding: "40px 32px",
-                    position: "relative",
-                    overflow: "hidden"
-                  }}
-                >
-                  <div style={{ fontSize: 40, marginBottom: 20, position: "relative", zIndex: 1 }}>
-                    {pillar.icon}
-                  </div>
-                  <h3
-                    style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, position: "relative", zIndex: 1, color: "#fff" }}
-                  >
-                    {pillar.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 16,
-                      color: "rgba(255,255,255,0.85)",
-                      lineHeight: 1.6,
-                      position: "relative",
-                      zIndex: 1
-                    }}
-                  >
-                    {pillar.desc}
-                  </p>
                   <div
                     style={{
                       position: "absolute",

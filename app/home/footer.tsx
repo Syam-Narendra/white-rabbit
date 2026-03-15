@@ -1,4 +1,4 @@
-import { BRAND, CONTACT } from "./data";
+import { BRAND, CONTACT } from "~/data";
 
 function LogoIcon({ size = 28, fill = "#0a0a0c" }: { size?: number; fill?: string }) {
   return (

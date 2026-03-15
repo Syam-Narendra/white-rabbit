@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CONTACT, BRAND, APPS } from "~/welcome/data";
 import type { Route } from "./+types/contact";
+import { CONTACT, APPS, BRAND } from "~/data";
 
 export function meta({}: Route.MetaArgs) {
   return [
