@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "GT Walsheim Pro", Arial, sans-serif;
+  --font-sans: "Space Grotesk", Arial, sans-serif;
 }
 
 * {
-  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  font-family: "Space Grotesk", Arial, sans-serif;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  background: #05050a;
+  font-family: "Space Grotesk", Arial, sans-serif;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
