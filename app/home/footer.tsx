@@ -1,17 +1,16 @@
+import { useState, useEffect } from "react";
 import { BRAND, CONTACT } from "~/data";
-
-function LogoIcon({ size = 28, fill = "#0a0a0c" }: { size?: number; fill?: string }) {
-  return (
-    <div style={{ width: size, height: size, borderRadius: size * 0.22, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-      <svg width={size * 0.54} height={size * 0.54} viewBox="0 0 16 16" fill="none">
-        <path d="M8 2C5.24 2 3 4.24 3 7c0 1.77.93 3.33 2.34 4.22L5 13h6l-.34-1.78C12.07 10.33 13 8.77 13 7c0-2.76-2.24-5-5-5zm-1 9H6l.2-1.06A4 4 0 014 7c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.46-.79 2.74-1.96 3.44L10.14 11H9v-1H7v1z" fill={fill} />
-      </svg>
-    </div>
-  );
-}
+import { LogoIcon } from "~/home/navbar";
 
 export default function Footer() {
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <footer id="site-footer" className="animate-footer" aria-label="Site footer" style={{

@@ -1,16 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { TEAM, BRAND, NAV_DROPDOWNS } from "~/data";
-
-interface Employee {
-  role: string;
-  name: string;
-  color: string;
-}
-interface NavItem {
-  icon: string;
-  label: string;
-  desc: string;
-}
+import type { NavItem } from "~/data";
 
 function Avatar({
   name,

@@ -139,6 +139,18 @@ export const NAV_DROPDOWNS: Record<string, NavItem[]> = {
     { icon: "🏋️", label: "Gym Rabbit",    desc: "Gym management system – Coming Soon" },
     { icon: "🏫", label: "School Rabbit", desc: "School management system – Coming Soon" },
   ],
+  Features: [
+    { icon: "🧾", label: "Billing & Invoicing",   desc: "Generate invoices and manage payments" },
+    { icon: "📊", label: "Business Analytics",     desc: "Track revenue and growth" },
+    { icon: "👥", label: "Customer Management",    desc: "Organize customer records" },
+    { icon: "🔔", label: "Smart Reminders",        desc: "Auto-send payment reminders" },
+  ],
+  Resources: [
+    { icon: "📖", label: "Documentation", desc: "Guides and API reference" },
+    { icon: "💬", label: "Community",     desc: "Join the discussion" },
+    { icon: "📰", label: "Blog",          desc: "Insights & product updates" },
+    { icon: "🛟", label: "Help Center",   desc: "Get support" },
+  ],
   Company: [
     { icon: "🐇", label: "About Us",   desc: "Our story & mission" },
     { icon: "📞", label: "Contact",    desc: "Get in touch with us" },
@@ -311,31 +323,7 @@ export const CONTACT = {
   ],
 };
 
-export const FOOTER_LINKS: Record<string, { label: string; url: string }[]> = {
-  Products: [
-    { label: "Bill Rabbit",   url: "#" },
-    { label: "Gym Rabbit",    url: "#" },
-    { label: "School Rabbit", url: "#" },
-  ],
-  Company: [
-    { label: "About",   url: "#" },
-    { label: "Blog",    url: "#" },
-    { label: "Careers", url: "#" },
-    { label: "Contact", url: "/contact" },
-  ],
-  Support: [
-    { label: "Help Center",  url: "#" },
-    { label: "Documentation",url: "#" },
-    { label: "Status",       url: "#" },
-    { label: "Community",    url: "#" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", url: "#" },
-    { label: "Terms of Service",url: "#" },
-    { label: "Security",       url: "#" },
-    { label: "Cookies",        url: "#" },
-  ],
-};
+
 
 export const AI_ASSISTANTS = [
   {
