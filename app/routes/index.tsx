@@ -16,7 +16,6 @@ export function meta() {
     { name: "description", content: "Welcome to White Rabbit Tech!" },
   ];
 }
-
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
