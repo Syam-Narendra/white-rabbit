@@ -4,16 +4,25 @@
   --font-sans: "Space Grotesk", Arial, sans-serif;
 }
 
-* {
-  font-family: "Space Grotesk", Arial, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-html,
 body {
-  background: #05050a;
-  font-family: "Space Grotesk", Arial, sans-serif;
+  background-color: #c9c9d4;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* Optional: Provide a clean scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }

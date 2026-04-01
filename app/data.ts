@@ -1,353 +1,517 @@
-// ─── White Rabbit – Central Data File ───────────────────────────────────────
+// ─────────────────────────────────────────────
+//  data.ts — Single source of truth for all site content
+//  Rabbit · Software that scales with you
+// ─────────────────────────────────────────────
 
-export const BRAND = {
-  name: "White Rabbit",
-  tagline: "Software that works as hard as you do.",
-  description:
-    "White Rabbit builds simplified, powerful business applications for modern teams. Fast to set up, easy to use, and built to scale.",
-  email: "hello@whiterabbit.app",
-  phone: "+91 98765 43210",
-  address: "42, Tech Park, Bengaluru, Karnataka – 560001, India",
-  founded: "2024",
-  copyright: `© ${new Date().getFullYear()} White Rabbit Software Pvt. Ltd. All rights reserved.`,
-};
+/* ============================================
+   TYPE DEFINITIONS
+   ============================================ */
 
-export interface App {
-  slug: string;
+export interface Brand {
   name: string;
   tagline: string;
+  taglineOptions: string[];
   description: string;
-  features: string[];
-  color: string;
-  gradient: string;
-  icon: string;
-  status: "available" | "coming-soon";
-  url: string;
+  logo: {
+    icon: string;
+    text: string;
+  };
 }
 
-export const APPS: App[] = [
-  {
-    slug: "bill-rabbit",
-    name: "Bill Rabbit",
-    tagline: "Billing, simplified.",
-    description:
-      "A no-fuss billing application for small and medium businesses. Create invoices, track payments, manage GST, and get paid faster.",
-    features: [
-      "Instant invoice generation",
-      "GST & tax management",
-      "Payment tracking",
-      "Customer ledger",
-      "PDF export & print",
-      "Multi-business support",
-    ],
-    color: "#3b82f6",
-    gradient: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%)",
-    icon: "🧾",
-    status: "available",
-    url: "#",
-  },
-  {
-    slug: "gym-rabbit",
-    name: "Gym Rabbit",
-    tagline: "Your gym, fully managed.",
-    description:
-      "A simplified gym management system with member onboarding, attendance tracking, payment renewals, and plan management — all in one place.",
-    features: [
-      "Member management",
-      "Attendance tracking",
-      "Payment & plan renewals",
-      "Trainer assignment",
-      "Revenue dashboard",
-      "SMS / WhatsApp reminders",
-    ],
-    color: "#10b981",
-    gradient: "linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%)",
-    icon: "🏋️",
-    status: "coming-soon",
-    url: "#",
-  },
-  {
-    slug: "school-rabbit",
-    name: "School Rabbit",
-    tagline: "Schools made effortless.",
-    description:
-      "A complete school management system covering admissions, attendance, fee collection, timetables, and parent communication.",
-    features: [
-      "Student admissions",
-      "Attendance management",
-      "Fee collection & receipts",
-      "Timetable builder",
-      "Parent communication",
-      "Staff payroll",
-    ],
-    color: "#f59e0b",
-    gradient: "linear-gradient(135deg, #92400e 0%, #d97706 50%, #f59e0b 100%)",
-    icon: "🏫",
-    status: "coming-soon",
-    url: "#",
-  },
-];
+export interface HeroCTA {
+  label: string;
+  href: string;
+  variant: "primary" | "secondary" | "ghost";
+}
+
+export interface Hero {
+  headline: string;
+  subheadline: string;
+  ctas: HeroCTA[];
+  socialProof: string;
+}
+
+export interface ProductFeature {
+  title: string;
+  description: string;
+}
+
+export interface Product {
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  features: ProductFeature[];
+  icon: string;
+  color: string;
+  cta: {
+    label: string;
+    href: string;
+  };
+}
 
 export interface Feature {
+  title: string;
+  description: string;
   icon: string;
-  label: string;
-  desc: string;
 }
 
-export const FEATURES: Feature[] = [
-  {
-    icon: "🧾",
-    label: "Billing & Invoicing",
-    desc: "Generate professional invoices and manage payments in seconds",
-  },
-  {
-    icon: "📊",
-    label: "Business Analytics",
-    desc: "Track revenue, expenses, and growth with clear dashboards",
-  },
-  {
-    icon: "👥",
-    label: "Customer Management",
-    desc: "Keep all your customer records, history, and ledgers organized",
-  },
-  {
-    icon: "🔔",
-    label: "Smart Reminders",
-    desc: "Auto-send payment and renewal reminders via SMS or WhatsApp",
-  },
-  {
-    icon: "🔒",
-    label: "Secure & Reliable",
-    desc: "Your data is encrypted and backed up automatically every day",
-  },
-  {
-    icon: "📱",
-    label: "Works Everywhere",
-    desc: "Access from any device — desktop, tablet, or mobile browser",
-  },
-];
-
-export interface NavItem {
-  icon: string;
+export interface Stat {
+  value: string;
   label: string;
-  desc: string;
+  suffix?: string;
 }
 
-export const NAV_DROPDOWNS: Record<string, NavItem[]> = {
-  Products: [
-    { icon: "🧾", label: "Bill Rabbit",   desc: "Simplified billing app" },
-    { icon: "🏋️", label: "Gym Rabbit",    desc: "Gym management system – Coming Soon" },
-    { icon: "🏫", label: "School Rabbit", desc: "School management system – Coming Soon" },
-  ],
-  Features: [
-    { icon: "🧾", label: "Billing & Invoicing",   desc: "Generate invoices and manage payments" },
-    { icon: "📊", label: "Business Analytics",     desc: "Track revenue and growth" },
-    { icon: "👥", label: "Customer Management",    desc: "Organize customer records" },
-    { icon: "🔔", label: "Smart Reminders",        desc: "Auto-send payment reminders" },
-  ],
-  Resources: [
-    { icon: "📖", label: "Documentation", desc: "Guides and API reference" },
-    { icon: "💬", label: "Community",     desc: "Join the discussion" },
-    { icon: "📰", label: "Blog",          desc: "Insights & product updates" },
-    { icon: "🛟", label: "Help Center",   desc: "Get support" },
-  ],
-  Company: [
-    { icon: "🐇", label: "About Us",   desc: "Our story & mission" },
-    { icon: "📞", label: "Contact",    desc: "Get in touch with us" },
-    { icon: "💼", label: "Careers",    desc: "Join the White Rabbit team" },
-    { icon: "📰", label: "Blog",       desc: "Insights & product updates" },
-  ],
-};
-
-export interface TeamMember {
+export interface Testimonial {
+  quote: string;
+  author: string;
   role: string;
-  name: string;
-  color: string;
+  company: string;
+  avatar?: string;
+  rating: number;
 }
 
-export const TEAM: TeamMember[] = [
-  { role: "Founder & CEO",       name: "Arjun R",    color: "#3b82f6" },
-  { role: "CTO",                 name: "Priya M",    color: "#8b5cf6" },
-  { role: "Lead Developer",      name: "Kiran S",    color: "#10b981" },
-  { role: "Product Designer",    name: "Neha V",     color: "#f59e0b" },
-  { role: "Backend Engineer",    name: "Dev P",      color: "#ef4444" },
-  { role: "Frontend Engineer",   name: "Riya T",     color: "#06b6d4" },
-  { role: "QA Engineer",         name: "Aman K",     color: "#f97316" },
-  { role: "Business Dev",        name: "Shruti B",   color: "#d946ef" },
-];
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-export const HERO = {
-  badge: "Now Available",
-  badgeDetail: "New tools for growth",
-  heading: "Software That Helps\nBusinesses Grow Faster",
-  subheading:
-    "We build powerful, modern software products that help businesses automate operations, manage customers, and scale faster. From startups to enterprises, our solutions simplify complex workflows and unlock new opportunities.",
-  primaryCta: "Start Using Our Products",
-  secondaryCta: "Book a Demo",
-  socialProof: "Trusted by 1,200+ businesses",
-};
+export interface FooterLink {
+  label: string;
+  href: string;
+}
 
-export const ABOUT_US = {
-  heading: "Building Software That Businesses Actually Need",
-  paragraphs: [
-    "We create software products designed specifically for modern businesses. Our focus is simple — build tools that save time, reduce manual work, and help companies operate more efficiently.",
-    "Our products are built with reliability, scalability, and performance in mind so that businesses can focus on growth instead of technology problems.",
-    "Whether you run a startup, small business, or large organization, our platforms help you manage operations with ease."
-  ]
-};
+export interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
 
-export const PLATFORM_PILLARS = [
-  {
-    icon: "🏢",
-    title: "Business Management Platforms",
-    desc: "Manage operations, employees, and workflows from a single dashboard.",
-    color: "#3b82f6",
-    gradient: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%)"
-  },
-  {
-    icon: "🤝",
-    title: "Customer & Client Management",
-    desc: "Organize customers, track interactions, and build stronger relationships.",
-    color: "#f97316",
-    gradient: "linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #f97316 100%)"
-  },
-  {
-    icon: "💳",
-    title: "Subscription & Payment Systems",
-    desc: "Automate billing, subscription management, and payment tracking.",
-    color: "#8b5cf6",
-    gradient: "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #8b5cf6 100%)"
-  },
-  {
-    icon: "📈",
-    title: "Analytics & Business Insights",
-    desc: "Turn data into decisions with powerful dashboards and reporting tools.",
-    color: "#06b6d4",
-    gradient: "linear-gradient(135deg, #164e63 0%, #0891b2 50%, #06b6d4 100%)"
-  }
-];
-
-export const WHY_CHOOSE_US = [
-  {
-    title: "Reliable Technology",
-    desc: "Our systems are designed to run smoothly even at scale.",
-    color: "#3b82f6"
-  },
-  {
-    title: "Easy to Use",
-    desc: "Simple interfaces so teams can start using them instantly.",
-    color: "#10b981"
-  },
-  {
-    title: "Secure & Scalable",
-    desc: "Enterprise-grade security and architecture built for growth.",
-    color: "#f59e0b"
-  },
-  {
-    title: "Continuous Innovation",
-    desc: "We constantly improve our products with new features and updates.",
-    color: "#8b5cf6"
-  }
-];
-
-export const INDUSTRIES = [
-  "Corporate Companies",
-  "Startups",
-  "Fitness & Gym Businesses",
-  "Retail Businesses",
-  "Service Businesses",
-  "Educational Institutions",
-  "Real Estate Companies"
-];
-
-export const CTA_SECTION = {
-  heading: "Ready to Transform Your Business with Better Software?",
-  subheading: "Join businesses that are simplifying their operations and accelerating growth with our technology.",
-  primaryCta: "Start Today",
-  secondaryCta: "Schedule a Demo"
-};
-
-export const ABOUT_PAGE = {
-  mission: {
-    heading: "Helping Businesses Run Smarter",
-    paragraphs: [
-      "Our mission is to empower businesses with powerful software that simplifies operations and drives growth.",
-      "We believe technology should remove complexity, not create it. That is why we focus on building products that are intuitive, scalable, and reliable."
-    ]
-  },
-  approach: {
-    heading: "Simple. Powerful. Scalable.",
-    pillars: [
-      { title: "User-Focused Design", desc: "Every feature is built around real business needs." },
-      { title: "Performance & Reliability", desc: "Our systems are optimized for speed, stability, and security." },
-      { title: "Future-Ready Architecture", desc: "Our platforms are built to scale as businesses grow." }
-    ]
-  },
-  philosophy: {
-    list: [
-      "Save time",
-      "Reduce operational complexity",
-      "Improve productivity",
-      "Provide actionable insights",
-      "Enable businesses to scale confidently"
-    ]
-  },
-  difference: {
-    list: [
-      "Easy to deploy",
-      "Flexible to customize",
-      "Built with modern technology",
-      "Designed for real-world business workflows"
-    ]
-  },
+export interface Footer {
   contact: {
-    heading: "Let’s Build the Future of Business Software Together",
-    subheading: "If you're looking for powerful software solutions to streamline your business operations, we'd love to help. Contact our team to learn more about our products and how they can transform your business.",
-    primaryCta: "Contact Us",
-    secondaryCta: "Book a Consultation"
-  }
-};
+    email: string;
+    location: string;
+  };
+  columns: FooterColumn[];
+  social: {
+    platform: string;
+    href: string;
+    icon: string;
+  }[];
+  copyright: string;
+  legalLinks: FooterLink[];
+}
 
-export const CONTACT = {
-  heading: "Get in touch",
-  subheading:
-    "Have a question, want a demo, or just want to say hi? We'd love to hear from you.",
-  email: BRAND.email,
-  phone: BRAND.phone,
-  address: BRAND.address,
-  hours: "Monday – Friday, 9 AM – 6 PM IST",
-  socials: [
-    { label: "Twitter / X", url: "https://twitter.com/whiterabbitapp", icon: "𝕏" },
-    { label: "LinkedIn",    url: "https://linkedin.com/company/whiterabbitapp", icon: "in" },
-    { label: "Instagram",   url: "https://instagram.com/whiterabbitapp", icon: "◎" },
+export interface SEO {
+  title: string;
+  description: string;
+  keywords: string[];
+  ogImage?: string;
+  twitterHandle?: string;
+}
+
+export interface SiteData {
+  brand: Brand;
+  hero: Hero;
+  products: Product[];
+  features: Feature[];
+  stats: Stat[];
+  testimonials: Testimonial[];
+  faq: FAQItem[];
+  footer: Footer;
+  seo: SEO;
+}
+
+/* ============================================
+   SITE DATA
+   ============================================ */
+
+export const siteData: SiteData = {
+
+  // ──────────────────────────────────────────
+  //  BRAND
+  // ──────────────────────────────────────────
+  brand: {
+    name: "ARabbit",
+    tagline: "Software that scales with you.",
+    taglineOptions: [
+      "Software that scales with you.",
+      "Move fast. Build smart.",
+      "Your ops, on autopilot.",
+      "Less manual work. More growth.",
+      "The engine behind modern businesses.",
+    ],
+    description:
+      "We build software products that help businesses streamline operations, improve efficiency, and scale faster.",
+    logo: {
+      icon: "🐇",
+      text: "Rabbit",
+    },
+  },
+
+  // ──────────────────────────────────────────
+  //  HERO
+  // ──────────────────────────────────────────
+  hero: {
+    headline: "Building Software for Businesses",
+    subheadline:
+      "Rabbit builds the tools modern businesses use to simplify billing, manage teams, and scale operations — without the overhead.",
+    ctas: [
+      {
+        label: "Get Started Free",
+        href: "/signup",
+        variant: "primary",
+      },
+      {
+        label: "Book a Demo",
+        href: "/demo",
+        variant: "secondary",
+      },
+      {
+        label: "See Products →",
+        href: "#products",
+        variant: "ghost",
+      },
+    ],
+    socialProof: "Trusted by 1000+ businesses",
+  },
+
+  // ──────────────────────────────────────────
+  //  PRODUCTS
+  // ──────────────────────────────────────────
+  products: [
+    {
+      name: "Bill Bit",
+      slug: "bill-bit",
+      tagline: "Billing that just works.",
+      description:
+        "Smart billing and invoicing tool for businesses. Generate GST-compliant invoices, handle recurring billing effortlessly, and get real-time financial insights — all from one clean dashboard.",
+      features: [
+        {
+          title: "GST Billing",
+          description:
+            "Generate fully compliant GST invoices with smart tax calculations and HSN code mapping.",
+        },
+        {
+          title: "Smart Reports",
+          description:
+            "Daily, weekly, and monthly reports generated instantly. Export to PDF, Excel, or share via link.",
+        },
+        {
+          title: "Recurring Billing",
+          description:
+            "Set up subscription-based invoicing with built-in reminders and payment tracking.",
+        },
+        {
+          title: "Clean, Simple UI",
+          description:
+            "Designed for speed. Create an invoice in under 30 seconds with zero learning curve.",
+        },
+      ],
+      icon: "💳",
+      color: "#6366f1",
+      cta: {
+        label: "Try Bill Bit Free",
+        href: "/products/bill-bit",
+      },
+    },
+    {
+      name: "Gym Rabbit",
+      slug: "gym-rabbit",
+      tagline: "Your gym, fully managed.",
+      description:
+        "All-in-one gym management and CRM software. Track members, manage subscriptions, monitor attendance, and grow your fitness business with data-driven insights.",
+      features: [
+        {
+          title: "Member Tracking",
+          description:
+            "Complete member profiles with health data, membership history, and workout preferences.",
+        },
+        {
+          title: "Subscription Management",
+          description:
+            "Flexible plans, auto-renewals, and payment reminders. Never miss a renewal again.",
+        },
+        {
+          title: "Attendance System",
+          description:
+            "QR-based or biometric check-in. Real-time occupancy tracking and peak-hour analytics.",
+        },
+        {
+          title: "Growth Analytics",
+          description:
+            "Retention rates, revenue trends, and member acquisition insights in one dashboard.",
+        },
+      ],
+      icon: "🏋️",
+      color: "#10b981",
+      cta: {
+        label: "Try Gym Rabbit Free",
+        href: "/products/gym-rabbit",
+      },
+    },
+    {
+      name: "School Rabbit",
+      slug: "school-rabbit",
+      tagline: "Smarter school operations.",
+      description:
+        "Complete school management and CRM system. From admissions to alumni — manage students, staff, fees, attendance, and parent communication in one unified platform.",
+      features: [
+        {
+          title: "Student Management",
+          description:
+            "Centralized profiles with academic records, health info, and behavioral tracking.",
+        },
+        {
+          title: "Attendance Tracking",
+          description:
+            "Seamless daily attendance with instant parent notifications and absence pattern detection.",
+        },
+        {
+          title: "Fee Management",
+          description:
+            "Flexible fee structures, online payments, instant receipts, and overdue reminders.",
+        },
+        {
+          title: "Parent Communication",
+          description:
+            "Built-in messaging, announcements, and report card sharing with read receipts.",
+        },
+      ],
+      icon: "🎓",
+      color: "#f59e0b",
+      cta: {
+        label: "Try School Rabbit Free",
+        href: "/products/school-rabbit",
+      },
+    },
   ],
+
+  // ──────────────────────────────────────────
+  //  FEATURES (generic SaaS benefits)
+  // ──────────────────────────────────────────
+  features: [
+    {
+      title: "Lightning Fast",
+      description:
+        "Built on modern infrastructure. Every interaction feels instant, every page loads in milliseconds.",
+      icon: "⚡",
+    },
+    
+    {
+      title: "Scales Effortlessly",
+      description:
+        "10 users or 10,000 — our architecture grows with you. No migrations, no downtime.",
+      icon: "📈",
+    },
+    
+    {
+      title: "Beautiful by Default",
+      description:
+        "Interfaces designed for humans. Clean, intuitive, and enjoyable to use every single day.",
+      icon: "✨",
+    },
+    {
+      title: "24/7 Support",
+      description:
+        "Real humans, real help. Get support via chat, email, or phone — whenever you need it.",
+      icon: "💬",
+    },
+  ],
+
+  // ──────────────────────────────────────────
+  //  STATS
+  // ──────────────────────────────────────────
+  stats: [
+    {
+      value: "1000",
+      label: "Businesses trust Rabbit",
+      suffix: "+",
+    },
+    {
+      value: "99.9",
+      label: "Uptime guaranteed",
+      suffix: "%",
+    },
+    {
+      value: "50",
+      label: "Invoices generated daily",
+      suffix: "K+",
+    },
+    {
+      value: "4.9",
+      label: "Average rating",
+      suffix: "★",
+    },
+  ],
+
+  // ──────────────────────────────────────────
+  //  TESTIMONIALS
+  // ──────────────────────────────────────────
+  testimonials: [
+    {
+      quote:
+        "Bill Bit replaced three different tools we were using. Our billing now runs itself — we save at least 15 hours a week.",
+      author: "Priya Sharma",
+      role: "Operations Head",
+      company: "NovaTech Solutions",
+      rating: 5,
+    },
+    {
+      quote:
+        "Gym Rabbit transformed how we manage our 3 branches. Member retention went up 40% in just two months after onboarding.",
+      author: "Arjun Reddy",
+      role: "Founder",
+      company: "Iron Core Fitness",
+      rating: 5,
+    },
+    {
+      quote:
+        "We moved from spreadsheets to School Rabbit overnight. Parents love the real-time updates, and our admin team finally has room to breathe.",
+      author: "Meena Krishnan",
+      role: "Principal",
+      company: "Sunrise International School",
+      rating: 5,
+    },
+  ],
+
+  // ──────────────────────────────────────────
+  //  FAQ
+  // ──────────────────────────────────────────
+  faq: [
+    {
+      question: "Is there a free plan?",
+      answer:
+        "Yes — every Rabbit product includes a generous free tier. No credit card required. You can upgrade anytime as your business grows.",
+    },
+    {
+      question: "How long does it take to get started?",
+      answer:
+        "Most teams are up and running in under 10 minutes. We offer guided onboarding, data import tools, and live support to make the transition seamless.",
+    },
+    {
+      question: "Can I use multiple Rabbit products together?",
+      answer:
+        "Absolutely. All Rabbit products share a unified account and integrate natively. Manage billing, members, and students from one login.",
+    },
+    {
+      question: "Is my data secure?",
+      answer:
+        "Security is non-negotiable. We use 256-bit AES encryption, continuous daily backups, and role-based access controls. Your data stays yours — always.",
+    },
+    {
+      question: "Do you offer custom solutions?",
+      answer:
+        "Yes. For teams with specific workflows, we offer custom integrations, white-label options, and dedicated account management. Reach out to discuss your needs.",
+    },
+    {
+      question: "What kind of support do you offer?",
+      answer:
+        "All plans include email and chat support. Pro and Business plans get priority support with under 2-hour response times and a dedicated success manager.",
+    },
+  ],
+
+  // ──────────────────────────────────────────
+  //  FOOTER
+  // ──────────────────────────────────────────
+  footer: {
+    contact: {
+      email: "contact@arabbit.in",
+      location: "Rajahmundry, East Godavari, India",
+    },
+    columns: [
+      {
+        title: "Products",
+        links: [
+          { label: "Bill Bit", href: "/products/bill-bit" },
+          { label: "Gym Rabbit", href: "/products/gym-rabbit" },
+          { label: "School Rabbit", href: "/products/school-rabbit" },
+          { label: "Pricing", href: "/pricing" },
+          { label: "Changelog", href: "/changelog" },
+        ],
+      },
+      {
+        title: "Company",
+        links: [
+          { label: "About", href: "/about" },
+          { label: "Blog", href: "/blog" },
+          { label: "Careers", href: "/careers" },
+          { label: "Contact", href: "/contact" },
+          { label: "Partners", href: "/partners" },
+        ],
+      },
+      {
+        title: "Resources",
+        links: [
+          { label: "Documentation", href: "/docs" },
+          { label: "Help Center", href: "/help" },
+          { label: "API Reference", href: "/api" },
+          { label: "Status", href: "/status" },
+          { label: "Community", href: "/community" },
+        ],
+      },
+    ],
+    social: [
+      { platform: "Twitter", href: "https://twitter.com/arabbit", icon: "twitter" },
+      { platform: "LinkedIn", href: "https://linkedin.com/company/arabbit", icon: "linkedin" },
+      { platform: "GitHub", href: "https://github.com/arabbit", icon: "github" },
+      { platform: "Instagram", href: "https://instagram.com/arabbit.in", icon: "instagram" },
+    ],
+    copyright: "© 2026 Rabbit. All rights reserved.",
+    legalLinks: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Cookie Policy", href: "/cookies" },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  SEO
+  // ──────────────────────────────────────────
+  seo: {
+    title: "Rabbit — Software that scales with you",
+    description:
+      "Rabbit builds modern software tools for businesses. Simplify billing with Bill Bit, manage gyms with Gym Rabbit, and run schools with School Rabbit. Trusted by 1000+ businesses.",
+    keywords: [
+      "rabbit software",
+      "billing software india",
+      "GST invoicing tool",
+      "gym management software",
+      "gym CRM",
+      "school management system",
+      "school ERP",
+      "SaaS India",
+      "business software",
+      "Bill Bit",
+      "Gym Rabbit",
+      "School Rabbit",
+      "arabbit",
+    ],
+    ogImage: "/og-image.png",
+    twitterHandle: "@arabbit",
+  },
 };
 
+/* ============================================
+   HELPER EXPORTS
+   ============================================ */
 
+/** Get a product by its slug */
+export function getProduct(slug: string): Product | undefined {
+  return siteData.products.find((p) => p.slug === slug);
+}
 
-export const AI_ASSISTANTS = [
-  {
-    name: "Milli",
-    role: "Sales Manager",
-    description: "Sales Manager. Milli uses your business insights to craft compelling cold call scripts, design persuasive cold emails, and build pitches that help you close deals with confidence. Milli is also capable of...",
-    image: "/images/milli.png",
-  },
-  {
-    name: "Buddy",
-    role: "Business Development Manager",
-    description: "Business Development Manager. Your go-to AI for business development, crafting growth strategies, delivering business insights, and excelling in AI for marketing to ensure success in product launches...",
-    image: "/images/buddy.png",
-  },
-  {
-    name: "Cassie",
-    role: "Customer Support Specialist",
-    description: "Customer Support Specialist. As a smart and charming AI for customer support, Cassie crafts expertly tailored responses to customer queries while maintaining your brand's unique voice. Cassie works...",
-    image: "/images/cassie.png",
-  },
-  {
-    name: "Cody",
-    role: "eCommerce Manager",
-    description: "eCommerce Manager. Streamlines your online store operations, managing inventory, optimizing product listings, and enhancing the customer shopping experience through personalized recommendations...",
-    image: "/images/cody.png",
-  }
-];
+/** Get all product slugs (useful for dynamic routing) */
+export function getProductSlugs(): string[] {
+  return siteData.products.map((p) => p.slug);
+}
+
+/** Get a random tagline option */
+export function getRandomTagline(): string {
+  const options = siteData.brand.taglineOptions;
+  return options[Math.floor(Math.random() * options.length)];
+}
+
+/** Get CTA by variant */
+export function getCTA(variant: HeroCTA["variant"]): HeroCTA | undefined {
+  return siteData.hero.ctas.find((c) => c.variant === variant);
+}
