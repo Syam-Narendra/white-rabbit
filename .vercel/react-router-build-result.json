@@ -1,0 +1,105 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/test": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/index": {
+        "id": "routes/index",
+        "parentId": "root",
+        "file": "app/routes/index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/test": {
+        "id": "routes/test",
+        "parentId": "root",
+        "file": "app/routes/test.tsx",
+        "path": "test",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/syam/Desktop/Peer/white-rabbit/app",
+    "basename": "/",
+    "buildDirectory": "/Users/syam/Desktop/Peer/white-rabbit/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_trailingSlashAwareDataRequests": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/index": {
+        "id": "routes/index",
+        "parentId": "root",
+        "file": "routes/index.tsx",
+        "index": true
+      },
+      "routes/test": {
+        "id": "routes/test",
+        "parentId": "root",
+        "file": "routes/test.tsx",
+        "path": "test"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/index.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/test.tsx",
+            "path": "test"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}

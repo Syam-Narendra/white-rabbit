@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a] selection:bg-[#1a1a1a] selection:text-white font-sans overflow-x-hidden">
       {/* ==================== NAVBAR ==================== */}
-      <nav className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 py-3.5 sm:px-5 sm:py-4 md:px-7 md:py-4 lg:px-14 lg:py-5.5 transition-all duration-300">
+      <nav className="absolute top-0 left-0 right-0 z-100 flex items-center justify-between px-4 py-3.5 sm:px-5 sm:py-4 md:px-7 md:py-4 lg:px-14 lg:py-5.5 transition-all duration-300">
         <a
           href="/"
           className="flex items-center gap-2 text-[#1a1a1a] shrink-0 hover:opacity-80 transition-opacity"
@@ -94,7 +94,7 @@ export default function Home() {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex bg-[#1a1a1a] text-white px-[22px] py-2.5 rounded-full text-[13px] font-medium hover:bg-[#333] hover:-translate-y-[1px] transition-all shadow-md shrink-0 whitespace-nowrap"
+          className="hidden md:inline-flex bg-[#1a1a1a] text-white px-[22px] py-2.5 rounded-full text-[13px] font-medium hover:bg-[#333] hover:-translate-y-px transition-all shadow-md shrink-0 whitespace-nowrap"
         >
           {hero.ctas[0].label}
         </a>
@@ -106,7 +106,7 @@ export default function Home() {
         id="hero"
       >
         {/* Background Image with Responsive Positioning */}
-        <div className="absolute inset-0 z-0 bg-[url('/lander-bg.png')] bg-cover bg-[center_top] sm:bg-[25%_top] md:bg-[30%_top] lg:bg-[center_top] bg-no-repeat" />
+        <div className="absolute inset-0 z-0 bg-[url('/lander-bg.png')] bg-cover bg-position-[center_top] sm:bg-position-[25%_top] md:bg-position-[30%_top] lg:bg-position-[center_top] bg-no-repeat" />
 
         <div className="relative z-10 w-full max-w-[1300px] mx-auto px-4 sm:px-5 md:px-7 lg:px-14 pt-[100px] pb-8 md:pb-12 lg:pb-16 flex flex-col justify-end min-h-[500px] lg:min-h-[640px]">
           <motion.h1
@@ -141,7 +141,7 @@ export default function Home() {
               <span className="font-bold text-[#1a1a1a]">
                 {stats[3].value} / 5
               </span>
-              <div className="flex gap-[1px] text-[#d42b2b]">
+              <div className="flex gap-px text-[#d42b2b]">
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>★</span>
                 ))}
@@ -166,19 +166,19 @@ export default function Home() {
       >
         <p className="text-[22px] sm:text-[26px] md:text-[34px] lg:text-[44px] font-normal leading-[1.4] md:leading-[1.3] text-[#2a2a2a] max-w-full lg:max-w-[840px] tracking-[-0.5px] mx-auto text-center md:text-left">
           We help businesses{" "}
-          <span className="bg-gradient-to-br from-[#f8d8a0] to-[#f0c878] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
+          <span className="bg-linear-to-br from-[#f8d8a0] to-[#f0c878] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
             streamline operations <span className="text-[0.55em] ml-1">⚡</span>
           </span>
           , improve{" "}
-          <span className="bg-gradient-to-br from-[#f0b8d0] to-[#e898b8] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
+          <span className="bg-linear-to-br from-[#f0b8d0] to-[#e898b8] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
             workflows <span className="text-[0.55em] ml-1">🔄</span>
           </span>
           , and{" "}
-          <span className="bg-gradient-to-br from-[#b0e0b8] to-[#88d098] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
+          <span className="bg-linear-to-br from-[#b0e0b8] to-[#88d098] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
             scale smarter <span className="text-[0.55em] ml-1">📈</span>
           </span>{" "}
           with powerful software—so they can{" "}
-          <span className="bg-gradient-to-br from-[#d0bef0] to-[#c0a8e8] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
+          <span className="bg-linear-to-br from-[#d0bef0] to-[#c0a8e8] px-1.5 md:px-2.5 py-0.5 rounded-[4px] md:rounded-md shadow-sm whitespace-nowrap inline-flex items-center">
             grow faster <span className="text-[0.55em] ml-1">🚀</span>
           </span>{" "}
           without the chaos. That's our promise.
@@ -199,7 +199,7 @@ export default function Home() {
         >
           {stats.map((s, i) => (
             <motion.div
-              className="flex flex-col items-center py-8 md:py-12 px-4 border-r border-[#eee] border-b md:border-b-0 last:border-b-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r md:last:border-r-0 hover:bg-[#fafafa] transition-colors"
+              className="flex flex-col items-center py-8 md:py-12 px-4 border-r border-[#eee] border-b md:border-b-0 last:border-b-0 nth-2:border-r-0 md:nth-2:border-r md:last:border-r-0 hover:bg-[#fafafa] transition-colors"
               key={i}
               variants={scaleIn}
             >
@@ -284,7 +284,7 @@ export default function Home() {
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
-                      <span className="text-[13.5px] text-[#444] leading-[1.5]">
+                      <span className="text-[13.5px] text-[#444] leading-normal">
                         <strong className="text-[#1a1a1a] font-semibold">
                           {f.title}
                         </strong>{" "}
@@ -418,7 +418,7 @@ export default function Home() {
                   "{t.quote}"
                 </blockquote>
                 <div className="flex items-center gap-4 pt-5 border-t border-[#f0f0f0]">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#444] flex items-center justify-center text-[13px] font-bold text-white shrink-0 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#1a1a1a] to-[#444] flex items-center justify-center text-[13px] font-bold text-white shrink-0 shadow-sm">
                     {t.author
                       .split(" ")
                       .map((n) => n[0])
@@ -522,7 +522,7 @@ export default function Home() {
 
       {/* ==================== CTA BAND ==================== */}
       <motion.section
-        className="bg-gradient-to-br from-[#f5d98b] via-[#d4cff5] to-[#cfe0f9] text-center px-4 py-20 lg:py-[100px] border-y border-[#d4cff5]"
+        className="bg-linear-to-br from-[#f5d98b] via-[#d4cff5] to-[#cfe0f9] text-center px-4 py-20 lg:py-[100px] border-y border-[#d4cff5]"
         id="cta-band"
         initial="hidden"
         whileInView="visible"
